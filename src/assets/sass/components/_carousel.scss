@@ -1,0 +1,25 @@
+.carousel {
+  &__upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    & h2 {
+      color: $oxford-blue;
+    }
+    & > p {
+      margin-top: 1rem;
+      color: $gray-color;
+    }
+  }
+
+  &__buttons {
+    display: inline-block;
+    & > button {
+      vertical-align: top;
+    }
+  }
+}

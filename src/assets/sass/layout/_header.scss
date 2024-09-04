@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  padding-block: 1.87rem;
+
+  &__logo {
+    width: 10.3125rem;
+  }
+
+  &__menu {
+    display: flex;
+    flex: 1;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+  }
+
+  &__search {
+    &-icon {
+      width: 1.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding-inline-start: 6.69rem;
+  }
+
+  &__item {
+    padding-inline-end: 4rem;
+    position: relative;
+
+    &--active::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 7px;
+      background-color: $yellow-color;
+      bottom: 3px;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    column-gap: 2.56rem;
+  }
+}
+
+@media screen and (max-width: $large) {
+  .header {
+    &__nav {
+      position: fixed;
+      flex-direction: column;
+      height: 100vh;
+      background-color: white;
+      width: 70%;
+      right: 0;
+      z-index: 1;
+      margin-block-start: -1.87rem;
+      box-shadow: $box-shadow;
+      transform: translateX(117%);
+      transition: all 0.3s ease;
+      right: -129px;
+      padding-top: 6rem;
+      padding-left: 3rem;
+
+      & a {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+      padding-inline-start: 0;
+    }
+
+    &__menu {
+      justify-content: flex-end;
+    }
+
+    &__login {
+      margin-inline-end: 2rem;
+    }
+    .active-menu {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width: $medium) {
+  .header {
+    justify-content: space-between;
+
+    &__menu {
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      margin-block-start: -1.87rem;
+      background-color: $white-color;
+      width: 50%;
+      right: 0;
+      z-index: 1;
+      box-shadow: $box-shadow;
+      transform: translateX(122%);
+      transition: all 0.3s ease;
+    }
+
+    &__nav {
+      position: relative;
+      height: auto;
+      top: 0;
+      width: 100%;
+      right: 0;
+      padding-top: 5rem;
+      padding-left: 3rem;
+      box-shadow: none;
+    }
+
+    &__login {
+      display: block;
+      padding-block-end: 2rem;
+      padding-left: 3rem;
+
+      &-text {
+        margin-inline-end: 1.5rem;
+      }
+    }
+
+    &__logo {
+      width: 8rem;
+    }
+  }
+}

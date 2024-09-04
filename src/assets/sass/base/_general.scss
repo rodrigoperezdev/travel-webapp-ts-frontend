@@ -1,0 +1,116 @@
+html {
+  font-size: 16px;
+  font-family: "poppins", sans-serif !important;
+}
+
+body {
+  padding-inline: 10rem;
+  margin: 0;
+  font-family: "poppins", sans-serif !important;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: $white-color;
+  font-family: "Poppins", sans-serif;
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2%;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+h4 {
+  color: $oxford-blue;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02375rem;
+  margin: 0;
+}
+
+p {
+  color: $cadet-gray-color;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+@media screen and (max-width: $xx-large) {
+  body {
+    padding-inline: 6rem;
+  }
+
+  h1 {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: $x-large) {
+  body {
+    padding-inline: 4rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: $large) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: $medium) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: $small) {
+  body {
+    padding-inline: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  margin-top: 8.5rem;
+}

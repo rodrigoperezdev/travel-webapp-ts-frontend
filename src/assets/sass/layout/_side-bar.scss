@@ -1,0 +1,30 @@
+.sidebar {
+  position: fixed;
+  transform: rotate(-90deg);
+  right: -7.3rem;
+  top: 32rem;
+
+  & span {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: $xx-large) {
+  .sidebar {
+    right: -9rem;
+    top: 30rem;
+
+    & span {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $x-large) {
+  .sidebar {
+    display: none;
+  }
+}

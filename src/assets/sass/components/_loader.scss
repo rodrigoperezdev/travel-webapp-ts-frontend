@@ -1,0 +1,26 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+  margin-inline-start: 2rem;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #fff, -20px 0 rgba(255, 255, 255, 0.133);
+    background: #fff;
+  }
+  33% {
+    box-shadow: 20px 0 #fff, -20px 0 rgba(255, 255, 255, 0.133);
+    background: rgba(255, 255, 255, 0.133);
+  }
+  66% {
+    box-shadow: 20px 0 rgba(255, 255, 255, 0.133), -20px 0 #fff;
+    background: rgba(255, 255, 255, 0.133);
+  }
+  100% {
+    box-shadow: 20px 0 rgba(255, 255, 255, 0.133), -20px 0 #fff;
+    background: #fff;
+  }
+}

@@ -1,0 +1,134 @@
+.search-form {
+  padding-inline: 5rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    background: var(--White, #fff);
+    box-shadow: 0px 43px 66px 0px rgba(0, 0, 0, 0.07);
+    padding: 1.5rem 5.19rem;
+    margin-top: -9rem;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    margin-bottom: 1rem;
+
+    &::after {
+      @include underline;
+      z-index: -1;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  &__location,
+  &__activity,
+  &__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__input-container {
+    display: flex;
+    align-items: center;
+    //This prevents the container to be different between one and another (MUI components and normal containers)
+    max-height: 36px;
+  }
+
+  &__input,
+  &__input::placeholder {
+    color: $cadet-gray-color;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 111.111%;
+    text-decoration-line: underline;
+    border: none;
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
+
+    &:focus-visible {
+      outline: transparent !important;
+    }
+  }
+
+  &__search-button {
+    & button {
+      justify-content: flex-end;
+    }
+
+    & svg {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $xx-large) {
+  .search-form {
+    padding-inline: 3.5rem;
+    &__container {
+      padding: 1.5rem 4rem;
+    }
+
+    &__inputs {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: $x-large) {
+  .search-form {
+    &__container {
+      padding: 1.5rem 4rem;
+    }
+
+    &__inputs {
+      flex-wrap: wrap;
+    }
+    &__search-button {
+      display: flex;
+      width: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $large) {
+  .search-form {
+    padding-inline: 0.7rem;
+    &__container {
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+
+    &__inputs > div {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .search-form {
+    &__container {
+      flex-direction: column;
+      padding: 1.7rem 1rem 1rem 2rem;
+    }
+
+    &__location,
+    &__activity,
+    &__date {
+      width: 100%;
+    }
+
+    &__input-container {
+      justify-content: space-between;
+    }
+  }
+}

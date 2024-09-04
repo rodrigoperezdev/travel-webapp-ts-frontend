@@ -1,0 +1,53 @@
+.category-card {
+  border-radius: 0.5rem;
+  border: 1px solid var(--Gray-Gainsboro, #dce5eb);
+  background: $white-color;
+  box-shadow: 0px 2px 4px 0px rgba(14, 86, 124, 0.16);
+  width: 23.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 5px; //Giving height to the container makes it to hide the box-shadow on the bottom part, this helps showing it
+}
+
+.category-card__container {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card__rating {
+  display: flex;
+  justify-content: flex-end;
+  color: $yellow-color;
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 111.111%;
+
+  & span {
+    background-color: $light-yellow-color;
+    padding: 0.38rem 0.9rem;
+    border-radius: 1rem;
+  }
+}
+
+.category-card__content {
+  margin-top: 3.06rem;
+  text-align: center;
+  text-align: start;
+
+  & img {
+    height: auto;
+    max-height: 3.125rem;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  & h4 {
+    margin-block: 1rem;
+  }
+}
