@@ -1,12 +1,12 @@
 import { Header } from "./components/layout/Header";
-import { SearchCarousel } from "./components/section/SearchCarousel";
+import { Sidebar } from "./components/layout/Sidebar";
 import { AppRouter } from "./router/AppRouter";
 
 function App() {
   return (
     <>
       <Header />
-      <SearchCarousel />
+      <Sidebar />
       <AppRouter />
     </>
   );
