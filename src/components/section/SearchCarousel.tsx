@@ -29,7 +29,7 @@ export const SearchCarousel: React.FC = () => {
   const { data, isLoading } = useFetchData<WeatherData>(url);
 
   const handleNextPrevSlide = (option: string) => {
-    if ((option = "next")) {
+    if (option == "next") {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % places.length);
     } else {
       setCurrentIndex((prevIndex) => (prevIndex - 1) % places.length);

@@ -7,7 +7,6 @@ import { PrevIcon } from "../graphics/PrevIcon";
 import { NextIcon } from "../graphics/NextIcon";
 import trending from "../../assets/js/trending";
 import { TrendingCard } from "./TrendingCard";
-import wishlist from "/assets/images/buttons/Icon/wishlist.svg";
 
 export const TrendingCarousel: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);

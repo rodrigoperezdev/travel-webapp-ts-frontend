@@ -5,18 +5,14 @@ import { Dayjs } from "dayjs";
 
 interface CalendarProps {
   label: string;
-  value: Dayjs | null;
+  date: Dayjs | null;
   setDate: (value: Dayjs | null) => void;
 }
 
-export const Calendar: React.FC<CalendarProps> = ({
-  label,
-  value,
-  setDate,
-}) => {
+export const Calendar: React.FC<CalendarProps> = ({ label, date, setDate }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label={label} value={value} onChange={setDate} />
+      <DatePicker label={label} value={date} onChange={setDate} />
     </LocalizationProvider>
   );
 };

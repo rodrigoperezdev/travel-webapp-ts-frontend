@@ -16,7 +16,7 @@ export const SearchForm: React.FC = () => {
         <div className="search-form__inputs">
           <LocationInput location={location} setLocation={setLocation} />
           <ActivityInput activity={activity} setActivity={setActivity} />
-          <DateInput setDate={setDate} />
+          <DateInput setDate={setDate} date={date} />
         </div>
         <div className="search-form__search-button">
           <button>
