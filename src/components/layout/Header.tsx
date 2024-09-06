@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/images/logo/emprise.svg";
+import searchIcon from "../../assets/images/header/search.svg";
 
 export const Header: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -12,7 +14,7 @@ export const Header: React.FC = () => {
     <header className="header">
       <Link to="/">
         <img
-          className="header__logo"
+          className={logo}
           src="src/assets/images/logo/emprise.svg"
           alt="Logo"
         />
@@ -57,11 +59,7 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-          <img
-            className="header__search-icon"
-            src="src/assets/images/header/search.svg"
-            alt="Search"
-          />
+          <img className="header__search-icon" src={searchIcon} alt="Search" />
         </nav>
         <div className="header__login">
           <Link className="header__login-text" to="/login">
