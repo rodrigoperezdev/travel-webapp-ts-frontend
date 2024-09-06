@@ -10,12 +10,12 @@
   line-height: 1.25rem; /* 100% */
 
   &--primary {
-    color: $white-color;
+    color: $white;
     background-color: $theme-color;
 
     &__disabled {
-      color: $white-color;
-      background-color: $cadet-gray-color;
+      color: $white;
+      background-color: $cadet-gray;
     }
   }
 }

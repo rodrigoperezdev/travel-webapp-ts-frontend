@@ -33,7 +33,7 @@ export const CategoryCarousel: React.FC = () => {
             swiperRef.current = swiper;
           }}
           spaceBetween={22}
-          slidesPerView={4}
+          slidesPerView={1}
           loop={true}
           modules={[Navigation]}
           breakpoints={{

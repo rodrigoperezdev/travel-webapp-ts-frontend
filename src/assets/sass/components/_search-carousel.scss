@@ -3,7 +3,7 @@
   transition: all ease 2s;
 
   & p {
-    color: $white-color;
+    color: $white;
   }
 
   &__container {
@@ -30,7 +30,7 @@
         height: 0.125rem;
         top: 1rem;
         left: -2.5rem;
-        background-color: $white-color;
+        background-color: $white;
       }
     }
 
