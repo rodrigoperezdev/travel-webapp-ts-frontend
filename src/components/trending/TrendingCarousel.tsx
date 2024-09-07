@@ -11,8 +11,6 @@ import { TrendingCard } from "./TrendingCard";
 export const TrendingCarousel: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
-  console.log(trending);
-
   return (
     <section>
       <div className="carousel">
