@@ -25,7 +25,7 @@ export const SearchCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${places[currentIndex].title}&aqi=no`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${places[currentIndex].title}&aqi=no`;
   const { data, isLoading } = useFetchData<WeatherData>(url);
 
   const handleNextPrevSlide = (option: string) => {
