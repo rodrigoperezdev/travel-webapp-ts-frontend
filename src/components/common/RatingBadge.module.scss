@@ -1,0 +1,18 @@
+@import "../../assets/sass/abstract/variables";
+
+.rating {
+  display: flex;
+  justify-content: flex-end;
+  color: $yellow-color;
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 111.111%;
+
+  & span {
+    background-color: $light-yellow-color;
+    padding: 0.38rem 0.9rem;
+    border-radius: 1rem;
+  }
+}
