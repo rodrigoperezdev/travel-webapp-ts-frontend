@@ -24,6 +24,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
   margin: 0;
+  color: $oxford-blue;
 }
 
 h3 {
@@ -34,6 +35,16 @@ h3 {
 h4 {
   color: $oxford-blue;
   font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02375rem;
+  margin: 0;
+}
+
+h5 {
+  color: $oxford-blue;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -113,4 +124,8 @@ button {
 
 section {
   margin-top: 8.5rem;
+
+  @media (max-width: 800px) {
+    margin-top: 5rem;
+  }
 }

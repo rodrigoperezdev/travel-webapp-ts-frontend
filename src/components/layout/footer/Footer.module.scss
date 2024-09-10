@@ -1,0 +1,146 @@
+@import "../../../assets/sass/abstract/variables";
+
+.footer {
+  margin-top: 8.5rem;
+
+  &__quickLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.44rem;
+    flex-wrap: wrap;
+  }
+
+  &__quickLinksContainer {
+    display: flex;
+  }
+
+  &__moreCategories {
+    color: $gray;
+    font-weight: 400;
+    margin-left: 1.31rem;
+  }
+
+  @media (max-width: $small) {
+    &__quickLinksContainer {
+      flex-direction: column;
+    }
+
+    &__moreCategories {
+      margin-left: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__contactInfo h5 {
+    font-weight: 400;
+  }
+
+  &__contactSection {
+    & h2 {
+      font-weight: 500;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 10rem;
+    margin-right: 2rem;
+
+    ul {
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+      color: $gray;
+    }
+  }
+
+  @media (max-width: 1270px) {
+    &__contactSection {
+      margin-top: 2rem;
+    }
+
+    &__links {
+      width: 100%;
+      gap: 1rem;
+      justify-content: space-between;
+      margin-right: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__divider {
+    background: #e9ecef;
+    height: 1px;
+  }
+
+  &__headerContainer {
+    padding-block: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__titleWrapper {
+    & h4 {
+      color: $theme-color;
+      font-weight: 400;
+    }
+
+    & h2 {
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: $small) {
+    &__titleWrapper {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__officeInfo {
+    display: flex;
+    align-items: center;
+
+    & img {
+      width: 4rem;
+      margin-right: 1.5rem;
+    }
+    & > h5 {
+      color: #000;
+      font-weight: 400;
+    }
+  }
+
+  &__bottomLinks {
+    margin-top: 7.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: $small) {
+      margin-top: 5rem;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1.5rem;
+    flex-wrap: wrap;
+
+    @media (max-width: $small) {
+      & p {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

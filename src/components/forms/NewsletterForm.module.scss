@@ -1,0 +1,71 @@
+@import "../../assets/sass/abstract/variables";
+
+.subscriptionForm {
+  align-self: end;
+  display: flex;
+  margin-top: 40px;
+  max-width: 100%;
+  gap: 20px;
+  font-weight: 400;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  box-shadow: 0px 32px 84px 0px rgba(14, 86, 124, 0.16);
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 24px;
+  font-size: 18px;
+  color: $cadet-gray;
+  margin: auto 0;
+  padding: 1rem 2rem;
+
+  @media (max-width: 991px) {
+    padding: 1rem 1rem;
+  }
+}
+
+.input {
+  border: none;
+  color: $gray;
+
+  &::placeholder {
+    color: $cadet-gray;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.emailIcon {
+  aspect-ratio: 1.31;
+  object-fit: contain;
+  object-position: center;
+  width: 21px;
+  margin: auto 0;
+}
+
+.submitButton {
+  background: $theme-color;
+  font-size: 1rem;
+  color: $white;
+  text-align: center;
+  letter-spacing: -0.38px;
+  padding: 1rem 1.3rem;
+
+  @media (max-width: 991px) {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
