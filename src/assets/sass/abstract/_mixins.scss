@@ -1,6 +1,4 @@
 @mixin underline {
-  position: relative;
-  z-index: 1;
   &::after {
     content: "";
     position: absolute;
@@ -10,6 +8,11 @@
     bottom: 7px;
     left: 0;
     z-index: -1;
+  }
+
+  & {
+    position: relative;
+    z-index: 1;
   }
 }
 

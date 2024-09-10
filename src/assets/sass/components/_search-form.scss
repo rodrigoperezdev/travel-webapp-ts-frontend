@@ -18,8 +18,8 @@
     margin-bottom: 1rem;
 
     &::after {
-      @include underline;
       z-index: -1;
+      @include underline;
     }
   }
 
