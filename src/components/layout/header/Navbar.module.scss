@@ -1,0 +1,328 @@
+@use "sass:math";
+@import "../../../assets/sass/abstract/variables";
+
+.navbar {
+  display: flex;
+  position: fixed;
+  width: calc(100% - 2 * 12rem);
+  z-index: 12323;
+  background-color: #ffffffb7;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+
+  @media (max-width: $xx-large) {
+    width: calc(100% - 2 * 8rem);
+  }
+
+  @media (max-width: $x-large) {
+    width: calc(100% - 2 * 6rem);
+  }
+
+  @media (max-width: $small) {
+    width: calc(100% - 2 * 2rem);
+  }
+
+  &__logo {
+    width: 10.3125rem;
+    z-index: 12324;
+  }
+
+  &__logoContainer {
+    display: contents;
+  }
+
+  &__menu {
+    display: flex;
+    flex: 1;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    img {
+      width: 1.5rem;
+    }
+  }
+
+  &__search {
+    &-icon {
+      width: 1.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding-inline-start: 6.69rem;
+  }
+
+  &__item {
+    padding-inline-end: 4rem;
+    position: relative;
+
+    &--active::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 7px;
+      background-color: $yellow-color;
+      bottom: 3px;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    column-gap: 2.56rem;
+  }
+}
+
+@media screen and (max-width: ($large + 100px)) {
+  .navbar {
+    padding: 1.3rem;
+    &__nav {
+      position: fixed;
+      flex-direction: column;
+      height: 100vh;
+      background-color: white;
+      width: 100vw;
+      right: 0;
+      z-index: 111;
+      margin-block-start: -2rem;
+      box-shadow: $box-shadow;
+      transform: translateX(117%);
+      transition: all 0.3s ease;
+      right: -157px;
+      padding-top: 7rem;
+      padding-left: 3rem;
+
+      & a {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__logo {
+      width: 8rem;
+    }
+
+    &__list {
+      flex-direction: column;
+      padding-inline-start: 0;
+    }
+
+    &__menu {
+      justify-content: flex-end;
+    }
+
+    &__login {
+      z-index: 212;
+      column-gap: 1rem;
+    }
+    .active-menu {
+      transform: translateX(0);
+    }
+
+    &__list li {
+      margin-bottom: 2rem;
+    }
+
+    &__loginText {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $medium) {
+  .navbar {
+    justify-content: space-between;
+
+    &__menu {
+      flex-direction: column;
+      position: fixed;
+      min-height: 89vh;
+      margin-block-start: -1.87rem;
+      background-color: $white;
+      width: 100%;
+      right: 0;
+      z-index: 1;
+
+      box-shadow: $box-shadow;
+      transform: translateY(-202%);
+      transition: all 0.3s ease;
+    }
+
+    &__nav {
+      position: relative;
+      height: auto;
+      top: 0;
+      width: 100%;
+      right: 0;
+      padding-top: 8rem;
+      padding-left: 2rem;
+      box-shadow: none;
+    }
+
+    &__login {
+      display: block;
+      padding-block-end: 2rem;
+      padding-left: 3rem;
+
+      &-text {
+        margin-inline-end: 1.5rem;
+      }
+    }
+
+    &__loginText {
+      margin-right: 1.2rem;
+    }
+
+    &__logo {
+      width: 8rem;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  padding: $hamburger-padding-y $hamburger-padding-x;
+  cursor: pointer;
+  z-index: 2423432324;
+
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+
+  // Normalize (<button>)
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+
+  &:hover {
+    @if $hamburger-hover-use-filter == true {
+      filter: $hamburger-hover-filter;
+    } @else {
+      opacity: $hamburger-hover-opacity;
+    }
+  }
+
+  &.is-active {
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-active-hover-filter;
+      } @else {
+        opacity: $hamburger-active-hover-opacity;
+      }
+    }
+
+    .hamburgerInner,
+    .hamburgerInner::before,
+    .hamburgerInner::after {
+      background-color: $hamburger-active-layer-color;
+    }
+  }
+}
+
+.hamburgerBox {
+  width: $hamburger-layer-width;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburgerInner {
+  display: block;
+  top: 50%;
+  margin-top: math.div($hamburger-layer-height, -2);
+
+  &,
+  &::before,
+  &::after {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    border-radius: $hamburger-layer-border-radius;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+}
+
+.hamburgerCollapse {
+  padding-top: 6px;
+  .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &::after {
+      top: ($hamburger-layer-spacing * 2 + $hamburger-layer-height * 2) * -1;
+      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+        opacity 0.1s linear;
+    }
+
+    &::before {
+      transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+        transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &.is-active {
+    .hamburgerInner {
+      transform: translate3d(
+          0,
+          ($hamburger-layer-spacing + $hamburger-layer-height) * -1,
+          0
+        )
+        rotate(-45deg);
+      transition-delay: 0.22s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::after {
+        top: 0;
+        opacity: 0;
+        transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+          opacity 0.1s 0.22s linear;
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(-90deg);
+        transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+          transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: ($large + 100px)) {
+  .hamburger {
+    display: block;
+    margin-left: 1rem;
+  }
+}

@@ -1,5 +1,5 @@
 import { Footer } from "./components/layout/footer/Footer";
-import { Header } from "./components/layout/Header";
+import { Header } from "./components/layout/header/Header";
 import { Sidebar } from "./components/layout/sidebar/Sidebar";
 
 import { AppRouter } from "./router/AppRouter";

@@ -1,0 +1,27 @@
+@import "../../assets/sass/abstract/variables";
+
+.btn {
+  padding: 0.88rem 0.75rem;
+  border-radius: 1.75rem;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.primary {
+  color: $white;
+  background-color: $theme-color;
+
+  &:hover {
+    background-color: lighten($theme-color, 10%);
+    transition: 0.3s all ease;
+  }
+}
+
+.disabled {
+  color: $white;
+  background-color: $cadet-gray;
+}
