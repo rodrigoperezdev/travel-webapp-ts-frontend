@@ -6,7 +6,7 @@ import nextImg from "../../assets/images/home/next.svg";
 import prevImg from "../../assets/images/home/prev.svg";
 import { useFetchData } from "../../hooks/useFetchData";
 import places from "../../assets/js/placesDB";
-import { Loader } from "./Loader";
+import { Loader } from "../common/Loader";
 
 export const SearchCarousel: React.FC = () => {
   interface WeatherCondition {
