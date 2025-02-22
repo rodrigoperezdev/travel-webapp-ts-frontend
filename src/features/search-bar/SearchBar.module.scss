@@ -1,0 +1,44 @@
+@import "../../assets/sass/abstract/variables";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input {
+  width: 3rem;
+  background-color: transparent;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 0.7rem;
+  transition: width 0.5s ease-in-out, padding 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  z-index: 1;
+  cursor: pointer;
+
+  &:focus,
+  &:focus-visible,
+  &:hover,
+  &:not(:placeholder-shown) {
+    outline: 1px solid var(--cadet-gray, #99a3ad);
+    background-color: #99a3ad32;
+    width: 11rem;
+    padding: 0.6rem 0.5rem 0.6rem 3rem;
+  }
+
+  &:placeholder-shown:not(:focus) {
+    background-color: transparent;
+    width: 3rem;
+    padding: 0.6rem 0;
+    outline: none;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 1.25rem;
+  left: 0.8rem;
+  width: 1.2rem;
+}

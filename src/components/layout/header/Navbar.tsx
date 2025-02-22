@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import logo from "../../../assets/images/logo/emprise.svg";
-import searchIcon from "../../../assets/images/header/search.svg";
 import { Button } from "../../common/Button";
+import { SearchBar } from "../../../features/search-bar/SearchBar";
 
 export const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -66,11 +66,7 @@ export const Navbar: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-          <img
-            className={styles.navbar__searchIcon}
-            src={searchIcon}
-            alt="Search"
-          />
+          <SearchBar />
         </nav>
         <div className={styles.navbar__login}>
           <Link className={styles.navbar__loginText} to="/login">
