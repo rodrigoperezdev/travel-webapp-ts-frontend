@@ -54,7 +54,17 @@ h5 {
 
 p {
   color: $cadet-gray;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+input {
+  color: var(--dark-color, #212529);
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
