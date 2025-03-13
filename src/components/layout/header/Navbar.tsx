@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import logo from "../../../assets/images/logo/emprise.svg";
 import { Button } from "../../common/Button";
-import { SearchBar } from "../../../features/search-bar/SearchBar";
+import { SearchContainer } from "../../../features/search-bar/components/SearchContainer";
 
 export const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-          <SearchBar />
+          <SearchContainer />
         </nav>
         <div className={styles.navbar__login}>
           <Link className={styles.navbar__loginText} to="/login">

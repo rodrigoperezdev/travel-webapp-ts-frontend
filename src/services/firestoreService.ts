@@ -3,11 +3,10 @@ import { db } from "../firebase/firebaseConfig.ts";
 
 export const fetchFirestoreData = async (
   collectionName: string
-): Promise<string[]> => {
+): Promise<object[]> => {
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
-    console.log("Desde query:", querySnapshot);
-    return querySnapshot.docs.map((doc) => doc.data().name);
+    return querySnapshot.docs.map((doc) => doc.data());
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
