@@ -1,0 +1,35 @@
+@import "../../../assets/sass/abstract/variables";
+
+.container {
+  position: absolute;
+  top: 53px;
+  width: 14.4rem;
+  border-radius: 1rem;
+  background-color: var(--white, #ffff);
+  border: 1px solid var(--light-gray, #eeeeee);
+
+  & ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  & li {
+    padding: 1rem;
+
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    &:hover {
+      background-color: var(--light-gray, #eeeeee);
+    }
+  }
+}
+
+.listElement {
+  text-transform: capitalize;
+}
