@@ -1,0 +1,43 @@
+name: Build React App
+
+on:
+  push:
+    branches:
+      - main
+      - feature-deployQA
+  pull_request:
+    branches:
+      - main
+      - feature-deployQA
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v3
+
+      - name: Config Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: TypeScript review
+        run: yarn tsc --noEmit
+
+      - name: Execute tests
+        run: yarn test --watchAll=false
+
+      - name: Compile app
+        run: yarn build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: build
