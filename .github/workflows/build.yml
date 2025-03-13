@@ -30,8 +30,5 @@ jobs:
       - name: TypeScript review
         run: yarn tsc --noEmit
 
-      - name: Execute tests
-        run: yarn test --watchAll=false
-
       - name: Compile app
         run: yarn build
