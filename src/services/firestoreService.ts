@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, QueryDocumentSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig.ts";
 
 export const fetchFirestoreData = async (
@@ -7,7 +7,9 @@ export const fetchFirestoreData = async (
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
     console.log("Desde query:", querySnapshot);
-    return querySnapshot.docs.map((doc) => doc.data().name);
+    return querySnapshot.docs.map(
+      (doc: QueryDocumentSnapshot) => doc.data().name
+    );
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
